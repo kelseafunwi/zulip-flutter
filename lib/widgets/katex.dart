@@ -292,10 +292,9 @@ class NegativeLeftOffset extends SingleChildRenderObjectWidget {
 class RenderNegativePadding extends RenderShiftedBox {
   RenderNegativePadding({
     required EdgeInsetsGeometry padding,
-    TextDirection? textDirection,
+    this._textDirection,
     RenderBox? child,
   }) : assert(!padding.isNonNegative),
-       _textDirection = textDirection,
        _padding = padding,
        super(child);
 
