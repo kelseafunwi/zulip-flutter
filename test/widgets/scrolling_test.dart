@@ -1,5 +1,6 @@
 import 'package:checks/checks.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:zulip/widgets/scrolling.dart';
@@ -152,7 +153,7 @@ void main() {
           controller: controller,
           // The tiny cacheExtent causes each layout round to only reach
           // the first item it expects will go beyond the viewport.
-          cacheExtent: 1.0, // in (logical) pixels!
+          scrollCacheExtent: ScrollCacheExtent.pixels(1.0), // in (logical) pixels!
           center: const ValueKey('center'),
           slivers: [
             SliverToBoxAdapter(
